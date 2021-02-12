@@ -4,7 +4,7 @@ const crypto = require("crypto");
 const { privateKey, passphrase } = require("./keys");
 function decrypt(data) {
   return crypto
-    .publicDecrypt(
+    .privateDecrypt(
       {
         key: privateKey,
         passphrase: passphrase
@@ -16,7 +16,7 @@ function decrypt(data) {
 
 // Write Javascript code!
 const valueToDecrypt =
-  "EUjIWAy1LIeQw+g9mZAVZ78LOpMHaGQce97O4NOfLfzZsoZvgZT7F5bGzVDk6d+/yS5KTeMbY6TvjGyEbTgRrD3DPENfNKwsGpuX7x/kB8/eSKrECb6LcqIpz/d7QWpSxH7jPJlBTmFlJpIlvYFPZ9nLRRTCrZ/BAd2vMLZIeyKDqOrn8m3wOua86RMpcvrck53OHggDnmsDpQDc+BSpRshusP1SX+puv6YN1poVQNrxFCiqzJIIV85QbV7tL56PEd4cssdBSefLDilt1QuDoQLrdp9B3S1hTbb73lpkRP5WYRnMxGH+ef/n9yf1apPxaT0QhxO36b702bkweFjZPCxxmXaAnZdvggaTqMOAPuAW7uRgPuu2mOBN72hQMD+M2Kzr20/KOfqWepSOW2x0c6CKsl+yNpmEm8sR7A5fp8aP6iXYuI/QfaBNu1XNbH86W92Sxl5EUuOuUny8we0e9MBauPAk9V1oh1PBxwfNnCiJGwuw/FKlpzKeMFcLsz0ahHdPVaQLZhvW6a9Wp6yNlupsvfvH0PnMuOIMqCDL3fLtMKRKHgSI/k//ufZhCsxMhi/bCdAlbpHOziriigo2ZEIcskTTAKobn0yC+FtHvv0vt5NMtbwkoSTH2QKpvyIWNGBu3jLriIuTJB5AbGScjm0YwGZZ5ZvASA/9jM8UG2Q=";
+  "lgltVqeWLuCMpnPGSVFzYOWI1N6ifER6kHOQkXjGwANoyuGS5U9xjBVZk6pxfaEAakcsO8RLwG3SdrOhmPYCJA363K6C0Ps2qatH6iHWQW11Sjx4o0/+HIpqFA8BKZbBmQl9IQzvqrntl5YkBEAdPPRvP2QSUatvyaJpD0OBvGjnpmyVCSaFHpF0y16Bzck3+6w9vXZX1j476q3leazwoOw6kPeISdO4xaQtDaVYwU6+ytmv+cGe7SJ6Z31MP2d3ZaDrYBq/7EO6E/VVLGIncjKRngWh5RhOvqd6Gkma7+3LrnCDnmXD+iTgpEX39gHdZPbnEEzuydM1BiIqCKBcMB71X0sTA6/mxTTPRhCuJshl8AX4v9qGk1I7RXTdIFfHtUYcp9gKXtsk/+Uey63slWppIsKRu3nOI0Yllt6M9qy3KnKRtLsao1yhfKMjjhnmWE/h2HriF04ta5q+EHlGMAv1mtHNi9K2cp8RXEa9IUAcClWd06Zthz8IGJAP1K+a1Q8xUn7SIg8xilEv90d9jxlnUY1Ql9rkbxTzkgjQdf1txZaq6lapFQp+WkI/ReGLLcmxWsJUyG4GVDimJYQfi5WerjPg/gqbtxIaxRE3j7GJIZz2W/iO2usYo7nSsriS7ERJ080UYs/J/Idgya4WXRZPCS6gYnzLZ4/rRypduks=";
 
 const obj = JSON.parse(decrypt(valueToDecrypt));
 const appDiv = document.getElementById("app");

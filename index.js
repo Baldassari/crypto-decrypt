@@ -7,7 +7,8 @@ function decrypt(data) {
     .privateDecrypt(
       {
         key: privateKey,
-        passphrase: passphrase
+        passphrase: passphrase,
+        padding: crypto.constants.RSA_PKCS1_PADDING
       },
       Buffer.from(data, "base64")
     )
@@ -16,7 +17,7 @@ function decrypt(data) {
 
 // Write Javascript code!
 const valueToDecrypt =
-  "lgltVqeWLuCMpnPGSVFzYOWI1N6ifER6kHOQkXjGwANoyuGS5U9xjBVZk6pxfaEAakcsO8RLwG3SdrOhmPYCJA363K6C0Ps2qatH6iHWQW11Sjx4o0/+HIpqFA8BKZbBmQl9IQzvqrntl5YkBEAdPPRvP2QSUatvyaJpD0OBvGjnpmyVCSaFHpF0y16Bzck3+6w9vXZX1j476q3leazwoOw6kPeISdO4xaQtDaVYwU6+ytmv+cGe7SJ6Z31MP2d3ZaDrYBq/7EO6E/VVLGIncjKRngWh5RhOvqd6Gkma7+3LrnCDnmXD+iTgpEX39gHdZPbnEEzuydM1BiIqCKBcMB71X0sTA6/mxTTPRhCuJshl8AX4v9qGk1I7RXTdIFfHtUYcp9gKXtsk/+Uey63slWppIsKRu3nOI0Yllt6M9qy3KnKRtLsao1yhfKMjjhnmWE/h2HriF04ta5q+EHlGMAv1mtHNi9K2cp8RXEa9IUAcClWd06Zthz8IGJAP1K+a1Q8xUn7SIg8xilEv90d9jxlnUY1Ql9rkbxTzkgjQdf1txZaq6lapFQp+WkI/ReGLLcmxWsJUyG4GVDimJYQfi5WerjPg/gqbtxIaxRE3j7GJIZz2W/iO2usYo7nSsriS7ERJ080UYs/J/Idgya4WXRZPCS6gYnzLZ4/rRypduks=";
+  "eJJgyX0dLqE1uEZOGz27MHjp8bBv75CQNFV7xbLZfM0qhqKDboY19CQmHbFxYEZyfmi+X2VeABxF5moyUdqXJNogc4U0BQkhcPa2acWE584HSGvBzIhszPuJNPE8ZZM1xXhTUeUmDv/vBPzvBWiqOj3Lo+ozWXkR7Qb9e6/lJtDkPLWcKuD3SUA+hNKciS5uTXs1PNPrgZ3r2BlHIywESESZe1/9CYVdDiK/O5aaIghfo5oA3rlc0RFcK+k+ZDEVLwb+18bAwt+3/sD48vMdUOx9ujco9KwfMHe0aOtd2sgE9XACaBo4F50/31vLKQOlNtmGPpXGYD+FzKtO/uM/OksgsMhLtJ1maNYMI9tf/HDc3tcMyEU83HjiAKfajwHZVVxbnA7sLp3JtSV0Jgef3bAkFatTUebKXZgib2D6y8ip7bqmdOuRO7gLhdRtUSc3/Pm6WTIxmifzP4H7Pd5SHs+KeCY+PGdUvhI8cFdVIdCvfwuW3jhTKO2c+K2lcbVYdpd7IEG8WiCOSbCnKVN61Gqc187P0BWjhJwNrKnMqtsYpLlppQ/KaiuFPP7PUn0XEjKS1drXbLtQ9xbYO0kGH0x98HTATUevluc8eT+WCCgO8YzT44v+MuGZJ+RUbYgNkbBg29UAczUGnReMxce/qiI5iHAxsOIDr2h0nqtmD5c=";
 
 const obj = JSON.parse(decrypt(valueToDecrypt));
 const appDiv = document.getElementById("app");
